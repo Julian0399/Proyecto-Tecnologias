@@ -167,6 +167,38 @@ section p{
   padding:1rem;
   color:rgb(0, 1, 2);
 }
+.comentarios .toneladas{
+  display: flex;
+  flex-wrap: wrap;
+  gap:4rem;
+}
+.comentarios .toneladas .cal{
+  flex:1 1 auto;
+  line-height: 2rem;
+}
+.comentarios .toneladas .cal h2{
+  font-family: 'ABeeZee';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+.comentarios  h1{
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+.comentarios .toneladas .cal h1{
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
 .comentarios .container .row .col{
   display: flex;
   flex-wrap: wrap;
@@ -177,6 +209,7 @@ section p{
   height: 60px;
   display:block;
   margin:auto;
+  filter:drop-shadow(-1px 1px 10px rgba(0, 0, 0, 0.7))
 }
 .comentarios .container .row .col a{
   font-family: 'Advent Pro';
