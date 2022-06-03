@@ -140,6 +140,59 @@ section p{
 .materiales .container .row .col{
   padding:2rem;
 }
+.comentarios{
+  background:url(../resources/fondoazul.png) no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+.comentarios .container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.comentarios .container .row{
+  padding:2rem;
+  background:rgba(255, 255, 255, 0.144);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  border:.1rem solid rgba(0,0,0,.3);
+  border-radius: .5rem;
+  text-align: center;
+  flex:1 1 10rem;
+  position: relative;
+}
+.titulo{
+  text-align: center;
+  font-size: 3rem;
+  padding:1rem;
+  color:rgb(0, 1, 2);
+}
+.comentarios .container .row .col{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comentarios .container .row img{
+  width: 80px;
+  height: 60px;
+  display:block;
+  margin:auto;
+}
+.comentarios .container .row .col a{
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 5rem;
+}
+.comentarios .container .row .col p{
+  font-family: 'Advent Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
 
 /* 
 
