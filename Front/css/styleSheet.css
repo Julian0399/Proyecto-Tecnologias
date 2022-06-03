@@ -46,15 +46,15 @@ section{
   flex-wrap: wrap;
   gap:1.5rem;
   min-height: 50vh;
-  align-items: center;
+  align-items:  flex-start;;
   background:url(../resources/Vector\ 1fondo1seccion.png) no-repeat;
   background-size: cover;
   background-position: center;
 }
 .home .content{
-  flex:1 1 40rem;
-  padding-top: 6.5rem;
-  font-size:medium;
+  flex:1 1 50rem;
+  padding-top: 5.5rem;
+
 }
 .home .image{
   flex:1 1 40rem;
@@ -76,6 +76,7 @@ section{
 .home .content h3{
   font-size: 4rem;
   color:#333;
+
 }
 
 .home .content p{
@@ -85,8 +86,17 @@ section{
   color:#666;
   padding:1rem 0;
 }
-/* 
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+section h1{
+  line-height: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
 
+/* 
 
 .home{
   display: flex;
