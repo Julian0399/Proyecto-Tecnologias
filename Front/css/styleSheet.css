@@ -91,7 +91,7 @@ section{
   flex-wrap: wrap;
   gap:1.5rem;
 }
-section .container{
+section .materiales .container{
   display: flex;
   justify-content: space-between;
 }
@@ -127,6 +127,7 @@ section p{
   border:.1rem solid rgba(10, 10, 0, 0.911);
   cursor: pointer;
   border-radius: 24px;
+
 }
 
 .materiales .container .row .image{
@@ -226,6 +227,38 @@ section p{
   font-size: 20px;
   line-height: 24px;
 }
+
+.noticias .container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+.noticias .container .row{
+  flex:0 1 25rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  cursor: pointer;
+  border-radius: 24px;
+}
+.noticias .container .row .col{
+  flex-direction: row-reverse;
+}
+
+.noticias .container .row  img{
+  width: 370px;
+  height: 236px;
+  display:block;
+  margin:auto;
+  margin-top: 15px;
+
+}
+.noticias .container .row .col{
+  padding:5rem;
+}
+
+
+
 
 /* 
 
