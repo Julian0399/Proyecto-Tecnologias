@@ -1,54 +1,91 @@
+.navbar-brand,
+.navbar-nav li a {
+
+    line-height: 40px;
+    height:40px;
+    padding-top: 0;
+}
 .logo {
   width:80px;
   height:60px;
+  margin-top:-12px;
 }
-/* html{
+body{
+  background:#d9eee659;
+}
+html{
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
-
-body{
-  background:#f7f7f7;
-}
-
 section{
-  padding:2rem 9%;
+  padding:2rem 5%;
 }
-
 .btn{
-  display: inline-block;
-  padding:.8rem 3rem;
-  border:.2rem solid var(--red);
-  color:var(--red);
   cursor: pointer;
-  font-size: 1.7rem;
-  border-radius: .5rem;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  margin-top: 1rem;
 }
-
 .btn::before{
   content: '';
-  position: absolute;
   top:0; right: 0;
   width:0%;
   height:100%;
-  background:var(--red);
+  background:#26062c;
   transition: .3s linear;
   z-index: -1;
 }
-
 .btn:hover::before{
   width:100%;
   left: 0;
 }
 
 .btn:hover{
-  color:#fff;
+  color:rgb(1, 209, 88);
 }
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  min-height: 50vh;
+  align-items: center;
+  background:url(../resources/Vector\ 1fondo1seccion.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home .content{
+  flex:1 1 40rem;
+  padding-top: 6.5rem;
+  font-size:medium;
+}
+.home .image{
+  flex:1 1 40rem;
+}
+
+.home .image img{
+  width:100%;
+  padding:1rem;
+  animation:float 3s linear infinite;
+}
+@keyframes float{
+  0%, 100%{
+    transform: translateY(0rem);
+  }
+  50%{
+    transform: translateY(2rem);
+  }
+}
+.home .content h3{
+  font-size: 4rem;
+  color:#333;
+}
+
+.home .content p{
+  width: 400px;
+  height: 56px;
+  font-size: 1.7rem;
+  color:#666;
+  padding:1rem 0;
+}
+/* 
 
 
 .home{
