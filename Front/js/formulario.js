@@ -2,16 +2,17 @@
   function limpiarFormulario() {
     $("#passwordsingup").val("");
     $("#emailsingup").val("");
-    $("#username").val("");
-    $("#surname").val("");
+    $("#name").val("");
+    $("#cedula").val("");
     $("#email").val("");
-    $("#confirm_password").val("");
-    $("#password1").val("");
-    $("#emailLogin").val("");
+    $("#password2").val("");
+    $("#password").val("");
+    $("#telefono").val("");
+    $("#email").val("");
   }
 
   function check_pass() {
-    if (document.getElementById('password1').value == document.getElementById('confirm_password').value) {
+    if (document.getElementById('password').value == document.getElementById('password2').value) {
         document.getElementById('submit').disabled = false;
     } else {
         document.getElementById('submit').disabled = true;

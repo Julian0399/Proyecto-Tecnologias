@@ -33,10 +33,17 @@ function cargarDatos(data){
     for (x in data) {
         rows += `<tr><td>${data[x].placa}</td><td>${data[x].modelo}</td><td>${data[x].campo}</td></tr>`;
     }
-    $("#dataTable").append(rows);
-	
+    $("#dataTable").append(rows);	
 }
-
+function mostrar(){
+	document.getElementById('navbarsExample').style.display='none';
+	document.getElementById('teamo').style.display='flex';
+}
+function ocultar(){
+	document.getElementById('navbarsExample').style.display='flex';
+	document.getElementById('teamo').style.display='none';
+}
+// document.write('<nav class="navbar-nav  navbar-expand-sm navbar-dark bg-dark justify-content-between rounded"style="background-color: #e3f2fd" id="navbarsExample"><ul>	<li></li></ul><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample"	aria-controls="navbarsExample" aria-expanded="true" aria-label="Toggle navigation">	<span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse justify-content-start" >	<ul class="nav navbar-nav" id="myTab" role="tablist"><li class="nav-item active"><a class="nav-link" id="home-tab" data-toggle="tab" href="#Home" role="tab" aria-controls="home"aria-selected="true">Inicio</a>	</li>		<li class="nav-item">			<a class="nav-link" id="table-tab" data-toggle="tab" href="#Table" role="tab" aria-controls="tabla"				aria-selected="false">Tablas</a>		</li>		<li class="nav-item dropdown" id="service-tab">			<a class="nav-link dropdown-toggle" href="#" id="dropdownEx" data-toggle="dropdown"				aria-haspopup="true" aria-expanded="true">Servicios</a>			<div class="dropdown-menu" aria-labelledby="dropdownEx">				<a class="dropdown-item" href="#Maps" data-toggle="tab">Mapa</a>				<a class="dropdown-item" href="#Comentarios" data-toggle="tab">Comentarios</a>			</div>		</li>	</ul></div><button class="btn btn-primary" type="submit">Button</button></nav>')
 
 function submitConsulta(){
 	console.log("Entró a llamar");
@@ -57,6 +64,49 @@ function submitConsulta(){
 }
 
 // insertar información a la base de datos capturados desde interfaz gráfica
+function setStorage(){
+
+
+	var user= document.getElementById("name").value;
+	var cedula= document.getElementById("cedula").value;
+	var email= document.getElementById("email").value;
+	var password= document.getElementById("password").value;
+	var password2= document.getElementById("password2").value;
+	var telefono= document.getElementById("telefono").value;
+	Usuario = {"nombre":user,"cedula":cedula,"email":email,"contrasena":password,"contrasena2":password2,"telefono":telefono}
+	var usuar=[{'email':123}];
+	usuar.push(Usuario);
+	var prueba = JSON.parse(localStorage.getItem("usuario"));
+	if(prueba==null ){
+		localStorage.setItem("usuario",JSON.stringify(usuar));
+	}else{
+		prueba.push(Usuario);
+		localStorage.setItem("usuario",JSON.stringify(prueba));
+	}
+	
+}
+
+function iniciarSesion(){
+	var aux=false;
+	var prueba = JSON.parse(localStorage.getItem("usuario"));
+	var email2= document.getElementById("emailsingup").value;
+	var password2= document.getElementById("passwordsingup").value;
+	var user= document.getElementById("name").value;
+	for(var i=0;i<prueba.length;i++){
+		if(prueba[i].email==email2 && prueba[i].contrasena==password2 ){
+			ocultar();
+			aux=true;
+			$("#result1").text(email2);
+			//document.getElementById('respuesta').innerHTML = (JSON.parse(email2));
+		}
+	}if(aux==false){
+		swal("No puede ser!", "CONTRASEÑA O USUARIO INCORRECTO", "error");
+		//window.alert(" ");
+		console.log('ERROR')
+	}
+	
+
+}
 
 $(document).ready(function(){
 	$("#vehiculoForm").submit(function(event){
@@ -110,69 +160,9 @@ function formSuccess(){
 	alert("Datos almacenados");
 }
 
-// const userOrder = {};
-
-// function getValues(e) {
-//   // turn form elements object into an array
-//   const elements = Array.prototype.slice.call(e.target.elements);
-
-//   // go over the array storing input name & value pairs
-//   elements.forEach((el) => {
-//     if (el.type !== "submit") {
-//       userOrder[el.name] = el.value;
-//     }
-//   });
-
-//   // finally save to localStorage
-//   localStorage.setItem('userOrder', JSON.stringify(userOrder));
-// }  
-
-// document.getElementById("myform").addEventListener("submit", getValues);
-
-function setStorage(){
-
-	// var user= document.getElementById("username").value;
-	// var userSurname= document.getElementById("surname").value;
-	// var userEmail = document.getElementById("emailLogin").value;
-	// var password_1 = document.getElementById("password1").value;
-	// // var confirm_password_1 = document.getElementById("confirm_password").value;
-	// // var btnradio_1 = document.getElementById("btnradio1").value;
-	// // var btnradio_2 = document.getElementById("btnradio2").value;
-	// var testObject = { 'username': user, 'surname':userSurname, 'email': userEmail, 'password': password_1 };
-
-	// // Put the object into storage
-	// localStorage.setItem('testObject', JSON.stringify(testObject));
-	// // Retrieve the object from storage
-	// var retrievedObject = localStorage.getItem('testObject');
-	// console.log('retrievedObject: ', JSON.parse(retrievedObject));
-	
-
-	// console.log(user);
-	// localStorage.setItem("username", user);
-
-	// console.log(userSurname);
-	// localStorage.setItem("surname", userSurname);
-
-	// console.log(userEmail)
-	// localStorage.setItem("emailLogin",userEmail);
-
-	// console.log(password_1)
-	// localStorage.setItem("password1",password_1);
-
-	// console.log(confirm_password_1)
-	// localStorage.setItem("confirm_password",confirm_password_1);
-
-	// console.log(btnradio_1)
-	// localStorage.setItem("btnradio1",btnradio_1);
-	// console.log(btnradio_2)
-	// localStorage.setItem("btnradio2",btnradio_2);
-
-}
-
-
 function ValidatePasswords() {
-	var password = document.getElementById("password1").value;
-	var confirmPassword = document.getElementById("confirm_password").value;
+	var password = document.getElementById("password").value;
+	var confirmPassword = document.getElementById("password2").value;
 	if (password != confirmPassword) {
 		alert("Passwords do not match.");
 		return false;
@@ -183,8 +173,8 @@ function ValidatePasswords() {
 }
 
 function ValidateLogin() {
-	var password = document.getElementById("password1").value;
-	var confirmPassword = document.getElementById("confirm_password").value;
+	var password = document.getElementById("password").value;
+	var confirmPassword = document.getElementById("password2").value;
 	if (password != confirmPassword) {
 		alert("Passwords do not match.");
 		return false;
