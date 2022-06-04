@@ -502,7 +502,7 @@ section p{
   gap:1.5rem;
 }
 .visitas .container .row{
-  flex:1 1 25rem;
+  flex:1 1 50rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
