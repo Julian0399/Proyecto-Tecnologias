@@ -96,16 +96,15 @@ function iniciarSesion(){
 		if(prueba[i].email==email2 && prueba[i].contrasena==password2 ){
 			ocultar();
 			aux=true;
-			$("#result1").text(email2);
+			document.cookie = "username="+prueba[i].email;
 			//document.getElementById('respuesta').innerHTML = (JSON.parse(email2));
 		}
-	}if(aux==false){
+	}
+	if(aux==false){
 		swal("No puede ser!", "CONTRASEÑA O USUARIO INCORRECTO", "error");
 		//window.alert(" ");
 		console.log('ERROR')
 	}
-	
-
 }
 
 $(document).ready(function(){
