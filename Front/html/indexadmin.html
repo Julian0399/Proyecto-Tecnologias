@@ -14,9 +14,145 @@
 
 </head>
 
-<body>
+<body onload="document.getElementById('navbarsExample').style.display='none';">
+  <nav class="navbar navbar-expand-lg " style="background-color: #D9EEDA" id="teamo" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="/resources/logo1.png"  alt="" >  
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+        <ul class="navbar-nav  ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+        </ul>
+        <div>
+        <!-- Button trigger modal Iniciar Sesion -->
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Iniciar Sesión
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" id="Registrarion_1 "novalidate>
+                            <div class="md-form mb-2">
+                                <i class="fas fa-lock prefix grey-text"></i>
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Correo
+                                    Electronico</label>
+                                <input type="email" id="emailsingup" class="form-control" required/>
+                                <div class="invalid-feedback">
+                                    Digite un correo valido
+                                </div>
+                            </div>
+                            <div class="md-form mb-2">
+                                <i class="fas fa-lock prefix grey-text"></i>
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Contraseña</label>
+                                <input type="password" id="passwordsingup" class="form-control" required />
+                                <div class="invalid-feedback">
+                                    Digite su contraseña
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarFormulario()">Cerrar</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" onclick="iniciarSesion()">Iniciar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal Registarse -->
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+            Registrarse
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel1">Registrarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" id="Registration_2 "novalidate>
+                            <div class="input-group has-validation"></div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-name">Nombre</label>
+                                    <input type="text" id="name" class="form-control" required />
+                                    <div class="invalid-feedback">
+                                        Digite su nombre
+                                    </div>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-email">Cedula</label>
+                                    <input type="" id="cedula" class="form-control " required />
+                                    <div class="invalid-feedback">
+                                        Digite su cedula
+                                    </div>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-pass">Correo
+                                        Electronico</label>
+                                    <input type="email" id="email" class="form-control " required />
+                                    <div class="invalid-feedback">
+                                        Digite un correo valido
+                                    </div>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-pass">Contraseña</label>
+                                    <input type="password" id="password" class="form-control validate " required />
+                                    <div class="invalid-feedback">
+                                        Digite un contraseña
+                                    </div>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-pass">Confirmar
+                                        Contraseña</label>
+                                    <input type="password" id="password2" class="form-control validate" onchange="check_pass()" required />
+                                    <div class="invalid-feedback">
+                                        Confirme la contraseña
+                                    </div>
+                                </div>
+                                <div class="md-form mb-2">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <label data-error="wrong" data-success="right" for="orangeForm-email">Telefono</label>
+                                    <input type="" id="telefono" class="form-control " required />
+                                    <div class="invalid-feedback">
+                                        Digite su Numero De Telefono
+                                    </div>
+                                </div>
+                                
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button  onclick="ValidatePasswords()" type="submit" class="btn btn-outline-dark" id="submit">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
     <a class="ir-arriba " href="#home"> </a>
-    <nav class="navbar navbar-expand-lg " style="background-color: #D9EEDA"  >
+    <nav class="navbar navbar-expand-lg " style="background-color: #D9EEDA" id="navbarsExample" >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img class="logo" src="/resources/logo1.png"  alt="" >  
@@ -27,7 +163,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarText">
             <ul class="navbar-nav  ">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="adminclientes.html">Clientes</a>
@@ -40,9 +176,14 @@
               </li>
             </ul>
             <div>
-            
+              <p1 class="text-primary p-2 "  >Usuario= <a class="text-primary " id='result1'></a></p1>
+                <script> 
+                  let nombre = document.cookie;
+              
+                  document.getElementById('result1').innerHTML='<a class="text-primary">'+nombre.slice(9)+'</a>';
+                </script>
                 <!-- Button trigger modal Iniciar Sesion -->
-            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+            <button onclick="mostrar()" type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
                 Cerrar Sesión
             </button>
             <!-- Modal -->
@@ -58,7 +199,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                      <button type="button" class="btn btn-outline-dark">Cerrar Sesión</button>
+                      <a href="indexadmin.html" type="button" class="btn btn-outline-dark">Cerrar Sesión</a>
                     </div>
                   </div>
                 </div>
