@@ -40,7 +40,12 @@
             </li>
           </ul>
           <div>
-          <p1 class="text-primary p-2 "  > Usuario: <a class="text-primary " id='result1'></a></p1>
+            <p1 class="text-primary p-2 "  >Usuario= <a class="text-primary " id='result1'></a></p1>
+            <script> 
+              let nombre = document.cookie;
+          
+              document.getElementById('result1').innerHTML='<a class="text-primary">'+nombre.slice(9)+'</a>';
+            </script>
               <!-- Button trigger modal Iniciar Sesion -->
           <button  type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
               Cerrar Sesión
