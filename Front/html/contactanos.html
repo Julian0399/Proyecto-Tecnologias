@@ -189,7 +189,7 @@
               document.getElementById('result1').innerHTML='<a class="text-primary">'+nombre.slice(9)+'</a>';
             </script>
               <!-- Button trigger modal Iniciar Sesion -->
-          <button onclick="mostrar()" type="submit" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+          <button  type="submit" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
               Cerrar Sesión
           </button>
           <!-- Modal -->
@@ -205,7 +205,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-outline-dark">Cerrar Sesión</button>
+                    <a href="index.html"type="button" class="btn btn-outline-dark" onclick="mostrar()">Cerrar Sesión</a>
                   </div>
                 </div>
               </div>

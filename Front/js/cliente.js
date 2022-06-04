@@ -95,6 +95,7 @@ function iniciarSesion(){
 	for(var i=0;i<prueba.length;i++){
 		if(prueba[i].email==email2 && prueba[i].contrasena==password2 ){
 			ocultar();
+			document.getElementById('result1').innerHTML='<a class="text-primary">'+email2+'</a>';
 			aux=true;
 			document.cookie = "username="+prueba[i].email;
 			//document.getElementById('respuesta').innerHTML = (JSON.parse(email2));
